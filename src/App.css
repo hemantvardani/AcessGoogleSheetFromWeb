@@ -28,6 +28,20 @@
   color: #61dafb;
 }
 
+
+.row-hover .editOrDelete {
+  opacity: 0;
+}
+
+
+.row-hover:hover .editOrDelete {
+  opacity: 1;
+}
+.other-row-while-editing-mode {
+  
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
