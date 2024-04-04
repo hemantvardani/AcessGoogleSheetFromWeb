@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Table, Button, Input } from 'semantic-ui-react';
+import { Button} from 'semantic-ui-react';
 import { Header } from './layouts/Header';
 import loadingGif from './assests/icons8-loading-circle.gif';
 import './styles/App.css';
@@ -8,6 +8,7 @@ import 'semantic-ui-css/semantic.min.css';
 import 'semantic-ui-css/semantic.min.css';
 import { FormAddNewRow } from './components/FormAddNewRow';
 import { CircularRefreshIcon } from './assests/circular-refresh';
+import { TableContainingData } from './components/TableContainingData';
 
 function App() {
   const REACT_APP_GOOGLE_SHEET_LINK = process.env.REACT_APP_GOOGLE_SHEET_LINK;
@@ -38,9 +39,7 @@ function App() {
   }
 
   function fetchData() {
-    console.log('sss');
     axios.get(REACT_APP_GOOGLE_SHEET_LINK).then((e) => {
-      console.log(e.data);
       setApiData(e.data);
     });
   }
@@ -126,93 +125,7 @@ function App() {
                   <img src={loadingGif} alt="wait until the page loads" />
                 ) : (
                   <div class=" w-[90%]">
-                    <Table singleLine>
-                      <Table.Header>
-                        <Table.Row>
-                          <Table.HeaderCell>ID</Table.HeaderCell>
-                          <Table.HeaderCell>Avatar Name</Table.HeaderCell>
-                          <Table.HeaderCell>Performance Score</Table.HeaderCell>
-                          <Table.HeaderCell></Table.HeaderCell>
-                        </Table.Row>
-                      </Table.Header>
-
-                      <Table.Body>
-                        {apiData.map((data, index) => {
-                          return editableData?.index === index ? (
-                            <Table.Row>
-                              <Table.Cell>
-                                <Input
-                                  value={editableData.ID}
-                                  onChange={(e) => {
-                                    setEditableData({
-                                      ...editableData,
-                                      ID: e.target.value,
-                                    });
-                                  }}
-                                ></Input>
-                              </Table.Cell>
-
-                              <Table.Cell>
-                                <Input
-                                  value={editableData.Avatar_Name}
-                                  onChange={(e) => {
-                                    setEditableData({
-                                      ...editableData,
-                                      Avatar_Name: e.target.value,
-                                    });
-                                  }}
-                                ></Input>
-                              </Table.Cell>
-
-                              <Table.Cell>
-                                <Input
-                                  value={editableData.Performance_Score}
-                                  onChange={(e) => {
-                                    setEditableData({
-                                      ...editableData,
-                                      Performance_Score: e.target.value,
-                                    });
-                                  }}
-                                ></Input>
-                              </Table.Cell>
-                              <Table.Cell>
-                                <i
-                                  class="check circle icon"
-                                  style={{ color: '#179c03' }}
-                                  onClick={() => {
-                                    submitEditedRow(index);
-                                  }}
-                                ></i>
-                              </Table.Cell>
-                            </Table.Row>
-                          ) : (
-                            <Table.Row
-                              className="row-hover"
-                              disabled={editableData ? true : false}
-                            >
-                              <Table.Cell>{data.ID}</Table.Cell>
-                              <Table.Cell>{data.Avatar_Name}</Table.Cell>
-                              <Table.Cell>{data.Performance_Score}</Table.Cell>
-                              <Table.Cell
-                                className="editOrDelete"
-                                style={{ marginLeft: 40 }}
-                              >
-                                <i
-                                  class="edit icon"
-                                  style={{ color: '#91ed72' }}
-                                  onClick={() => editRow(index)}
-                                ></i>
-                                <i
-                                  class="trash alternate icon"
-                                  style={{ color: '#f04d4d' }}
-                                  onClick={() => deleteRow(index)}
-                                ></i>
-                              </Table.Cell>
-                            </Table.Row>
-                          );
-                        })}
-                      </Table.Body>
-                    </Table>
+                    <TableContainingData apiData={apiData} deleteRow={deleteRow} editRow={editRow} editableData={editableData} setEditableData={setEditableData} submitEditedRow={submitEditedRow} />
                   </div>
                 )}
               </div>
