@@ -6,17 +6,9 @@ import './styles/App.css';
 import 'semantic-ui-css/semantic.min.css'
 import 'semantic-ui-css/semantic.min.css';
 
-// import REACT_APP_GOOGLE_SHEET_LINK from 'process.env'
-
-// const REACT_APP_GOOGLE_SHEET_LINK = "https://sheet.best/api/sheets/fbfa669c-2fdd-4bfb-bc42-9bfe7fe2093c"
-
-
 function App() {
   
-  const REACT_APP_GOOGLE_SHEET_LINK = process.env.REACT_APP_GOOGLE_SHEET_LINK
-
-
-
+const REACT_APP_GOOGLE_SHEET_LINK = process.env.REACT_APP_GOOGLE_SHEET_LINK
 
 const [apiData,setApiData] = useState([]);
 const [refreshIcon, setRefreshIcon]= useState(false);
@@ -24,7 +16,7 @@ const [showSubmittingMessage, setShowSubmittingMessage] = useState(false);
 const [editableData, setEditableData]= useState(null);
 
 
-  function submitFunction(e){
+function submitFunction(e){
               const formElement=document.querySelector('Form');
               e.preventDefault();
               
@@ -142,6 +134,7 @@ const [editableData, setEditableData]= useState(null);
              </div>
           </div>
 
+          
           <section id="section2" class=''>
 
 
