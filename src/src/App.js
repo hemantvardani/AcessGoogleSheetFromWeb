@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Button} from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import { Header } from './layouts/Header';
 import loadingGif from './assests/icons8-loading-circle.gif';
 import './styles/App.css';
@@ -125,7 +125,14 @@ function App() {
                   <img src={loadingGif} alt="wait until the page loads" />
                 ) : (
                   <div class=" w-[90%]">
-                    <TableContainingData apiData={apiData} deleteRow={deleteRow} editRow={editRow} editableData={editableData} setEditableData={setEditableData} submitEditedRow={submitEditedRow} />
+                    <TableContainingData
+                      apiData={apiData}
+                      deleteRow={deleteRow}
+                      editRow={editRow}
+                      editableData={editableData}
+                      setEditableData={setEditableData}
+                      submitEditedRow={submitEditedRow}
+                    />
                   </div>
                 )}
               </div>

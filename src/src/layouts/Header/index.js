@@ -29,18 +29,19 @@ export function Header() {
         </button>
 
         <span class="w-25 content-center text-[#e3e3dc] mt-4">
-        Changes made here are reflected in the Google Sheet, and vice versa:   <u><b>
-
-
-          
-          <a target='_blank' class=' text-[#e3e3dc]    hover:text-white'  href='https://docs.google.com/spreadsheets/d/1aCFidvMYq99gL87eWtYs1WOnJoKsCpgNF0wMIEjsrpM/edit#gid=0'>
-          LINK TO GOOGLE SHEET
-          </a>
-        </b>
+          Changes made here are reflected in the Google Sheet, and vice versa:{' '}
+          <u>
+            <b>
+              <a
+                target="_blank"
+                class=" text-[#e3e3dc]    hover:text-white"
+                href="https://docs.google.com/spreadsheets/d/1aCFidvMYq99gL87eWtYs1WOnJoKsCpgNF0wMIEjsrpM/edit#gid=0"
+              >
+                LINK TO GOOGLE SHEET
+              </a>
+            </b>
           </u>
-          </span>
-
-        
+        </span>
       </div>
     </div>
   );
