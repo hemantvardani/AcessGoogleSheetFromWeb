@@ -15,7 +15,7 @@ Note-> This service has one month free trial. Currect we are on Free version.
 
 # Links->
           Github Repo: https://github.com/hemantvardani/AcessGoogleSheetFromWeb
-          Live Link: https://extraordinary-croquembouche-03e4b2.netlify.app/
+          Live Link: https://hemantvardani.github.io/AcessGoogleSheetFromWeb/
        
           (Link is editable , so that you can make change in the sheet and see the effect on WebApp, and vice versa)
 
