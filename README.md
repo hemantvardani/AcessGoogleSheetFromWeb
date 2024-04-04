@@ -1,11 +1,16 @@
-# React app to Access Google Sheet for WebApp
+# React app to Access Google Sheet for WebApp, and vice a versa
+All the changes you make in website table are reflected on google sheet , and also same goes for google sheet changes for website.
+
+Google link : https://docs.google.com/spreadsheets/d/1aCFidvMYq99gL87eWtYs1WOnJoKsCpgNF0wMIEjsrpM/edit#gid=0
+
+Currently using : sheet.best to turn google sheet in Rest API
+Note-> This service has one month free trial. Currect we are on Free version.
 
 # Task-> INSTRUCTIONS
 
-          1.Please clone the following google sheet into your google account
-          https://docs.google.com/spreadsheets/d/134ZIhplKHX5TV1kPLXft9QsKDD1y5Epmm-aQ5fBqIzs/edit?usp=sharing
-          2.Create a react application that helps user visualise data from the sheet in tabular format
-          3.There should be a sync button in your dashboard that retrieves data from the same sheet.
+          1.Please open this project in one tab and Google sheet into another tab.
+          2.Make changes into sheet and click sync button. Changes must have been reflected on website.
+          3.Make changes into website table(Edit, Delete, or Create new Row). Changes must have been reflected on Google sheet.
           
 
 # Links->
